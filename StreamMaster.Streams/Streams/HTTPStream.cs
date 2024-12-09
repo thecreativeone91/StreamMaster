@@ -52,19 +52,19 @@ public class HTTPStream(ILogger<HTTPStream> logger, IOptionsMonitor<Setting> _se
 
             string? contentType = response.Content.Headers?.ContentType?.MediaType;
 
-            if (!string.IsNullOrEmpty(contentType) &&
-                (contentType.Equals("application/vnd.apple.mpegurl", StringComparison.OrdinalIgnoreCase) ||
-                contentType.Equals("audio/mpegurl", StringComparison.OrdinalIgnoreCase) ||
-                contentType.Equals("application/x-mpegURL", StringComparison.OrdinalIgnoreCase)))
-            {
-                CommandProfileDto commandProfileDto = profileService.GetM3U8OutputProfile(smStreamInfo.Id);
-                logger.LogInformation("Stream contains HLS content, using {name} for streaming: {streamName}", commandProfileDto.ProfileName, smStreamInfo.Name);
-                //CommandProfileDto commandProfileDto = profileService.GetCommandProfile("SMFFMPEG");
-                stopwatch.Stop();
-                logger.LogInformation("Got stream for {streamName} in {ElapsedMilliseconds} ms", smStreamInfo.Name, stopwatch.ElapsedMilliseconds);
+            // if (!string.IsNullOrEmpty(contentType) &&
+            //     (contentType.Equals("application/vnd.apple.mpegurl", StringComparison.OrdinalIgnoreCase) ||
+            //     contentType.Equals("audio/mpegurl", StringComparison.OrdinalIgnoreCase) ||
+            //     contentType.Equals("application/x-mpegURL", StringComparison.OrdinalIgnoreCase)))
+            // {
+            //     CommandProfileDto commandProfileDto = profileService.GetM3U8OutputProfile(smStreamInfo.Id);
+            //     logger.LogInformation("Stream contains HLS content, using {name} for streaming: {streamName}", commandProfileDto.ProfileName, smStreamInfo.Name);
+            //     //CommandProfileDto commandProfileDto = profileService.GetCommandProfile("SMFFMPEG");
+            //     stopwatch.Stop();
+            //     logger.LogInformation("Got stream for {streamName} in {ElapsedMilliseconds} ms", smStreamInfo.Name, stopwatch.ElapsedMilliseconds);
 
-                return commandExecutor.ExecuteCommand(commandProfileDto, smStreamInfo.Url, clientUserAgent, null, linkedCts.Token);
-            }
+            //     return commandExecutor.ExecuteCommand(commandProfileDto, smStreamInfo.Url, clientUserAgent, null, linkedCts.Token);
+            // }
 
             Stream stream = await response.Content.ReadAsStreamAsync(linkedCts.Token).ConfigureAwait(false);
             stopwatch.Stop();
