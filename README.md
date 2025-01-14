@@ -9,7 +9,7 @@ Fork of StreamMaster due to SenexCrenshaw deleting all code from the repository.
 
 StreamMaster, the premier video proxy streaming platform.
 
-[![Sponsor this project](https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink)](https://www.patreon.com/user?u=52683080)
+
 
 Please go to the wiki for further details and installation instructions.
 [New docs](https://senexcrenshaw.github.io/StreamMaster/)
