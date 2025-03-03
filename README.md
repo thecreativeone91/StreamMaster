@@ -1,3 +1,5 @@
+use https://github.com/carlreid/StreamMaster
+
 Fork of StreamMaster due to SenexCrenshaw deleting all code from the repository. Please submit pull requests for any changes needed. 
 
 <p align="center" width="100%">
