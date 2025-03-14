@@ -1,6 +1,11 @@
 
 Fork of StreamMaster due to SenexCrenshaw deleting all code from the repository. Please submit pull requests for any changes needed. 
 
+Docker
+thecreativeone91/streammaster:0.17.9
+https://hub.docker.com/r/thecreativeone91/streammaster
+
+
 <p align="center" width="100%">
     <img  src="https://raw.githubusercontent.com/SenexCrenshaw/StreamMaster/refs/heads/main/streammasterwebui/public/images/streammaster_logo.png" alt="StreamMaster Logo"/>
     <H1 align="center" width="100%">Welcome to StreamMaster</H1>
